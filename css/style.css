@@ -1,0 +1,549 @@
+@charset "UTF-8";
+
+html {
+  font-size: 100%;
+}
+
+body {
+  color: #121212;
+  font-size: 0.9rem;
+  line-height: 1.7;
+
+}
+
+a {
+  color: #121212;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.content {
+  padding-top: 120px;
+  padding-bottom: 160px;
+}
+
+.site-title {
+  line-height: 1px;
+}
+
+.section-title::after {
+  content: "";
+  width: 100px;
+  height: 3px;
+  background-color: #333;
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.site-title a {
+  display: block;
+}
+
+.sec-title {
+  font-size: 2.25rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#header {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  position: fixed;
+  z-index: 10
+}
+
+#navi {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  bottom: 0;
+  width: 300px;
+  color: #fff;
+  padding: 60px 25px;
+  background-color: #121212;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: all .5s;
+  z-index: 20;
+  opacity: 0;
+}
+
+#navi a {
+  color: #fff;
+}
+
+.open #navi {
+  left: 0;
+  opacity: 1;
+}
+
+#navi ul {
+  margin: 0;
+  padding: 0;
+}
+
+#navi ul.nav-menu {
+  margin-bottom: 60px;
+  border-top: solid 1px #fff;
+}
+
+#navi ul.nav-menu li {
+  position: relative;
+  margin: 0;
+  padding: 20px 0;
+  border-bottom: solid 1px #fff;
+}
+
+#navi ul.nav-sns li {
+  padding: 5px 0;
+}
+
+#navi .btn {
+  width: 250px;
+  border: solid 1px #fff;
+  color: #fff;
+  display: block;
+  font-weight: bold;
+  padding: 15px 0;
+  margin: 0 auto;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+
+#navi .btn::after {
+  content: " ";
+  width: 250px;
+  border-right: solid 1px #fff;
+  border-bottom: solid 1px #fff;
+  padding: 15px 0;
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+}
+
+#navi .btn:hover {
+  background-color: #fff;
+}
+
+.active#navi {
+  left: 0;
+  opacity: 1;
+}
+
+.hamburger-menu {
+  display: block;
+  position: fixed;
+  top: 25px;
+  right: 45px;
+  width: 30px;
+  height: 30px;
+  transition: all .5s;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.hamburger-menu span {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+
+.hamburger-menu span:nth-child(1) {
+  top: 4px;
+}
+
+.hamburger-menu span:nth-child(2) {
+  top: 14px;
+}
+
+.hamburger-menu span:nth-child(3) {
+  bottom: 4px;
+}
+
+.active.hamburger-menu span {
+  background-color: #fff;
+}
+
+.active.hamburger-menu span:nth-child(1) {
+  -webkit-transform: translateY(10px) rotate(-315deg);
+  transform: translateY(10px) rotate(-315deg);
+}
+
+.active.hamburger-menu span:nth-child(2) {
+  opacity: 0;
+}
+
+.active.hamburger-menu span:nth-child(3) {
+  -webkit-transform: translateY(-10px) rotate(315deg);
+  transform: translateY(-10px) rotate(315deg);
+}
+
+#mask {
+  display: none;
+  transition: all 0.5s;
+}
+
+.active#mask {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .8;
+  z-index: 10;
+  cursor: pointer;
+}
+
+
+#main {
+  padding-top: 80px;
+}
+#bg-video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+#video {
+  width: 100%;
+  object-fit: cover;
+  text-align: center;
+}
+
+#pickup {
+  width: 100%;
+  padding: 100px 0 50px 0;
+
+}
+
+#pickup.slick-area {
+  font-size: 0;
+  display: grid;
+  gap: 20px 35px;
+  padding: 0 30px;
+}
+
+.swiper {
+  height: 200px;
+  width: 100%;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 前へ次への矢印カスタマイズ */
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+  /*ここでデフォルトの矢印を上書き*/
+  width: 1rem;
+  height: 1rem;
+  border: 0;
+  border-top: solid 0.5rem #f5b2b2;
+  border-right: solid 0.5rem #f5b2b2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* 前への矢印カスタマイズ */
+.swiper-button-prev:before {
+  border-bottom: 20px solid transparent;
+  border-right: 30px solid #ff4500;
+  border-top: 20px solid transparent;
+}
+
+.swiper-button-prev:after {
+  transform: rotate(-135deg);
+}
+
+/* 次への矢印カスタマイズ */
+.swiper-button-next:before {
+  border-bottom: 20px solid transparent;
+  border-left: 30px solid #ff4500;
+  border-top: 20px solid transparent;
+}
+
+.swiper-button-next:after {
+  transform: rotate(45deg);
+}
+
+#feature {
+  max-width: 1240px;
+  padding: 100px 16px 50px 16px;
+  margin: -50px auto 10px auto;
+}
+
+#feature .grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+#feature .grid .item {
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px 4px #ccc;
+}
+
+#feature .grid img {
+  vertical-align: top;
+}
+
+#feature .grid .item-content {
+  padding: 30px;
+}
+
+#feature .grid .item-cat {
+  font-size: 0.75rem;
+  margin-bottom: 20px;
+}
+
+#feature .grid .item-text {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#feature .grid .item-date {
+  font-size: 0.75rem;
+  text-align: right;
+}
+
+#feature .fadein::before {
+  content: "";
+  position: absolute;
+  top: 60%;
+  right: 0;
+  margin-right: -30px;
+  border: 15px solid transparent;
+  border-left: 15px solid #e9f1fb;
+}
+
+#feature .fadein {
+  animation: fadein 2s ease-out forwards;
+}
+
+@keyframes fadein {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#contact {
+  color: #fff;
+  background-color: #121212;
+  padding: 50px 0;
+}
+
+#contact .sec-title {
+  color: #fff;
+}
+
+#contact .content {
+  max-width: 1240px;
+  padding: 0 16px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+#contact .contact-info p {
+  margin-bottom: 30px;
+}
+
+#contact .contact-info,
+#contact .contact-form {
+  width: 45%;
+}
+
+#contact .contact-form input,
+#contact .contact-form textarea {
+  width: 100%;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+#contact .contact-form .button input {
+  width: 200px;
+  color: #fff;
+  background-color: #121212;
+  border: solid 1px #fff;
+  padding: 12px 0;
+  margin-bottom: 0;
+}
+
+#contact .contact-form .button input:hover {
+  color: #202020;
+  background-color: #fff;
+}
+
+#footer {
+  color: #fff;
+  background-color: #121212;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.75rem;
+}
+
+/*-------------------------------------------
+SP
+-------------------------------------------*/
+@media screen and (max-width: 600px) {
+
+  .sec-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  #pickup .sec-title {
+    text-align: center;
+  }
+
+  .section-title::after {
+    width: 80px;
+  }
+
+  /*-------------------------------------------
+  ヘッダー
+  -------------------------------------------*/
+  #header {
+    padding: 20px 16px;
+  }
+
+  /* ハンバーガ―メニュー */
+  .hamburger {
+    width: 75px;
+    height: 75px;
+  }
+
+  .hamburger span {
+    width: 35px;
+    left: 21px;
+  }
+
+  .hamburger span:nth-child(1) {
+    top: 26px;
+  }
+
+  .hamburger span:nth-child(2) {
+    top: 37px;
+  }
+
+  .hamburger span:nth-child(3) {
+    top: 48px;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    top: 37px;
+    left: 21px;
+  }
+
+  .hamburger.active span:nth-child(2),
+  .hamburger.active span:nth-child(3) {
+    top: 37px;
+  }
+
+  .toggle_btn {
+    right: 20px;
+  }
+
+  /*-------------------------------------------
+  Video
+  -------------------------------------------*/
+  #bg-video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  /*-------------------------------------------
+  Pickup
+  -------------------------------------------*/
+  #pickup {
+    padding: 80px 0;
+    width: 100%;
+  }
+
+  #pickup .slick-area {
+    padding: 0 20px;
+  }
+
+  /*-------------------------------------------
+  Feature
+  -------------------------------------------*/
+  #feature {
+    width: 100%;
+    padding: 80px 16px;
+  }
+
+  #feature .grid .item-content {
+    padding: 16px;
+  }
+
+  /*-------------------------------------------
+  Contact
+  -------------------------------------------*/
+  #contact {
+    padding: 80px 0;
+  }
+
+  #contact .content {
+    flex-direction: column;
+  }
+
+  #contact .contact-info,
+  #contact .contact-form {
+    width: 100%;
+  }
+
+  #contact .contact-form .button input {
+    width: 100%;
+  }
+  
+  .item__img {
+    opacity: 0;
+  }
+}
